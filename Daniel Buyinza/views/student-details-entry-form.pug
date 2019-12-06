@@ -7,14 +7,92 @@ html(lang="en")
         title Student Details Entry Form
         link(rel="stylesheet", href="bootstrap/css/bootstrap.css")
         link(rel="stylesheet", href="styles.css")
+        script(src="validation.js")
     body
-        .conatiner
+        .container
             br
             .row
-                .col-md-3
-                .col-md-6
+                .col-md-2
+                .col-md-8
                     h3 Student Details Entry Form
-                    p Not all fields marked with a red star are (*) required
-                    form(action="", method="POST")
-
-                .col-md-3
+                    p Not all fields marked with a red star are (
+                        span.required *
+                        span ) required
+                    form(action="/entry-form", method="POST")
+                        .row
+                            .col
+                                label Surname 
+                                    span.required *
+                                input.col-md-12(type="text", name="surname", id="surname" placeholder="Enter your surname here")
+                                p#sn.req
+                            .col
+                                label Given name 
+                                    span.required *
+                                input.col-md-12(type="text", name="givenName", id="givenName" placeholder="Enter your given name here")
+                                p#gn.req
+                        
+                        .row
+                            .col
+                                label Gender
+                                    span.required *
+                                br
+                                label Male 
+                                input.col-md-2(type="radio", name="gender", value="Male", checked)
+                                label Female 
+                                input.col-md-2(type="radio", name="gender", value="Female")
+                                p#gn.req
+                        
+                        .row
+                            .col
+                                label Date of Birth 
+                                    span.required *
+                                input.col-md-12#date-of-birth(type="text", name="dateOfBirth", placeholder="01/01/1970")
+                                p#dob.req
+                            .col
+                                label Country 
+                                    span.required *
+                                select.col-md-12(name="country")
+                                    option(value="Uganda") ---------- Select Country ---------- 
+                                    option(value="Uganda") Uganda
+                                    option(value="Kenya") Kenya
+                                    option(value="Tanzania") Tanzania
+                                p#c.req
+                        
+                        .row
+                            .col
+                                label Place of Residence 
+                                    span.required *
+                                input.col-md-12(type="text", name="placeOfResidence", placeholder="Enter your Current place of residence")
+                                p#por.req
+                            .col
+                                label Phone Number 
+                                    span.required *
+                                input.col-md-12(type="text", name="phoneNumber", placeholder="Eg. 07xxxxxxxx or +2567xxxxxxxx")
+                                p#pn.req
+                        
+                        .row
+                            .col
+                                label Email Address 
+                                    span.required *
+                                input.col-md-12(type="email", name="emailAddress", placeholder="E.g. applicant@gmail.com")
+                                p#ea.req
+                        
+                        .row
+                            .col
+                                label Skills (separate skills with commas) 
+                                    span.required *
+                                textarea.col-md-12(name="skills", rows="2")
+                                p#s.req
+                            .col
+                                label Projects (separate projects with commas) 
+                                    span.required *
+                                textarea.col-md-12(name="projects", rows="2")
+                                p#p.req
+                        
+                        br
+                        .row
+                            .col
+                            .col
+                                button.col-md-6#submit(type="submit", onclick="validateFields(); return false;") Submit
+                                button.col-md-6#cancel(type="reset") Cancel
+                .col-md-2

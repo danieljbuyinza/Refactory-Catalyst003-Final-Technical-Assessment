@@ -1,12 +1,44 @@
+button {
+    border: 1px solid rgb(84, 42, 82);
+    font-weight: bold;
+    padding: 5px;
+}
+
+#cancel {
+    background-color: rgb(255, 255, 255);
+}
+
+#date-of-birth {
+    text-align: center;
+}
+
 h3 {
     background-color: rgba(84, 42, 82);
-    color: rgba(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     padding: 10px;
 }
 
-p {
-    color: rgba(84, 42, 82);
+input[type="email"], input[type="text"], select {
+    font-size: 14px;
+    padding: 5px;
+}
+
+label, p {
+    color: rgb(84, 42, 82);
     font-size: 14px;
     font-weight: 600;
+}
+
+.req {
+    color: rgb(192, 0, 0)
+}
+
+.required {
+    color: rgb(192, 0, 0)
+}
+
+#submit {
+    background-color: rgb(84, 42, 82);
+    color: white;
 }
